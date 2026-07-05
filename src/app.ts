@@ -25,7 +25,7 @@ app.post("/api/notes", async (req, res) => {
         const { title, content } = req.body;
     
         const result = await pool.query(
-            "INSERT INTO notes(title,content) VALUES($1,$2) RETURNING *",
+            "INSERT INTO notes(title,content) VALUES($1, $2) RETURNING *",
             [title, content]
         );
     
